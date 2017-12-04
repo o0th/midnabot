@@ -1,16 +1,18 @@
 <div style="text-align: center">
   <img width="300px" src="./images/midna.png_large"/>
-  <h1 style="margin: 0">@midnabot</h1>
 </div>
 
-## Commands
-### `/js - execute js code`
-Example
-```
-/js ```console.log('Hello world')``````
+# @midnabot
 
-### `/roll - roll dices`
-Example
+## Commands
+### [Sandbox](https://github.com/gf3/sandbox)
+Execute JavaScript code
+```
+/js ```console.log('Hello world')```
+```
+
+### [Roll](https://github.com/troygoode/node-roll)
+Roll dices
 ```
 /roll 2d10
 ```
