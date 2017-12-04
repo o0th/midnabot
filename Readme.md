@@ -7,10 +7,11 @@
 [![Telegram](https://img.shields.io/badge/Telegram-midnabot-blue.svg?style=for-the-badge)](https://t.me/midnabot)
 
 ## Commands
+
 ### [Sandbox](https://github.com/gf3/sandbox)
 Execute JavaScript code
 ```
-/js ```console.log('Hello world')```
+/sandbox ```console.log('Hello world')```
 ```
 
 ### [Roll](https://github.com/troygoode/node-roll)
