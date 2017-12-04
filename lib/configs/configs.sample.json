@@ -1,5 +1,6 @@
 {
   "development": {
+    "username": "your bot username",
     "token": "your bot token"
   }
 }

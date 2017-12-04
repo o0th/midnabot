@@ -1,6 +1,6 @@
 {
   "name": "midna",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "telegram bot",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/wsknorth/midna#readme",
   "dependencies": {
-    "node-telegram-bot-api": "^0.29.0",
+    "roll": "^1.2.0",
     "sandbox": "^0.8.6",
     "telegraf": "^3.17.0"
   },
