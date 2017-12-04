@@ -1,6 +1,6 @@
 {
   "name": "midna",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "telegram bot",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,6 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "nodemon": "^1.12.1"
+    "eslint-plugin-standard": "^3.0.1"
   }
 }
