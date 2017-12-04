@@ -3,6 +3,8 @@
 </div>
 
 # @midnabot
+[![Version](https://img.shields.io/badge/Version-0.1.0-blue.svg?style=for-the-badge)]()
+[![Telegram](https://img.shields.io/badge/Telegram-midnabot-blue.svg?style=for-the-badge)](https://t.me/midnabot)
 
 ## Commands
 ### [Sandbox](https://github.com/gf3/sandbox)
