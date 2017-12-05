@@ -25,7 +25,7 @@ Roll dices
 /roll 2d10
 ```
 
-## Install
+## Development
 
 Clone the repository
 ```bash
