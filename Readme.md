@@ -7,7 +7,6 @@
   <a href="https://github.com/standard/standard"><img src="https://img.shields.io/badge/Code_style-Standard-green.svg?style=for-the-badge" alt="Standard"></a>
   <a href="#"><img src="https://img.shields.io/badge/Version-0.1.2-blue.svg?style=for-the-badge" alt="Version"></a>
   <a href="https://t.me/midnabot"><img src="https://img.shields.io/badge/Telegram-midnabot-blue.svg?style=for-the-badge" alt="Telegram"></a>
-  <a href="https://t.me/midnadevbot"><img src="https://img.shields.io/badge/Telegram-midnadevbot-blue.svg?style=for-the-badge" alt="Telegram"></a>
 </p>
 
 <br/>
@@ -30,9 +29,14 @@ $ cp lib/configs/configs.sample.json lib/configs/configs.json
 $ vi lib/configs/configs.json
 ```
 
-Run
+Run in development
 ```bash
 $ npm start
+```
+
+Run in production
+```bash
+$ npm run production
 ```
 
 ## Sandbox - [gf3/sandbox](https://github.com/gf3/sandbox)
@@ -55,5 +59,5 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Author
 Sabato Luca "[wsknorth](https://github.com/wsknorth)" Guadagno
 
-# License
-This project is licensed under the MIT License - see the [License](License) file for details
+## License
+This project is licensed under the MIT License - see the [License](License.md) file for details

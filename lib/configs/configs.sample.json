@@ -6,6 +6,9 @@
 
   "production": {
     "username": "your bot username for production",
-    "token": "your bot token for production"
+    "token": "your bot token for production",
+    "webhook": "your webhook for production",
+    "path": "your path for the webhook",
+    "port": 3000,
   }
 }
