@@ -11,6 +11,20 @@
 
 <br/>
 
+## Sandbox - [gf3/sandbox](https://github.com/gf3/sandbox)
+
+Execute JavaScript code
+```
+/sandbox ```console.log('Hello world')```
+```
+
+## Roll - [troygoode/node-roll](https://github.com/troygoode/node-roll)
+
+Roll dices
+```
+/roll 2d10
+```
+
 ## Install
 
 Clone the repository
@@ -29,28 +43,36 @@ $ cp lib/configs/configs.sample.json lib/configs/configs.json
 $ vi lib/configs/configs.json
 ```
 
-Run in development
+Run
 ```bash
 $ npm start
 ```
 
-Run in production
+## Production
+
+Copy `midna.service` in `/etc/systemd/system`
 ```bash
-$ npm run production
+$ sudo cp midna.service /etc/systemd/system/midna.service
 ```
 
-## Sandbox - [gf3/sandbox](https://github.com/gf3/sandbox)
-
-Execute JavaScript code
-```
-/sandbox ```console.log('Hello world')```
+Create midna user
+```bash
+$ sudo useradd -r -s /bin/bash -G midna midna
 ```
 
-## Roll - [troygoode/node-roll](https://github.com/troygoode/node-roll)
-
-Roll dices
+Enable
+```bash
+$ sudo systemctl enable midna
 ```
-/roll 2d10
+
+Start
+```bash
+$ sudo systemctl start midna
+```
+
+Stop
+```bash
+$ sudo systemctl stop midna
 ```
 
 ## Versioning
