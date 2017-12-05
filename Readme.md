@@ -1,6 +1,9 @@
-<img width="200px" align="center" src="./images/midna.png_large"/>
+<h1 align="center">
+  <img width="200px" src="./images/midna.png_large"/>
+</h1>
 
-# @midnabot
+# midna
+[![Code style](https://img.shields.io/badge/Code_style-Standard-green.svg?style=for-the-badge)]()
 [![Version](https://img.shields.io/badge/Version-0.1.2-blue.svg?style=for-the-badge)]()
 [![Telegram](https://img.shields.io/badge/Telegram-midnabot-blue.svg?style=for-the-badge)](https://t.me/midnabot)
 
@@ -40,3 +43,12 @@ Roll dices
 ```
 /roll 2d10
 ```
+
+## Versioning
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/wsknorth/midna/tags).
+
+## Author
+Sabato Luca "[wsknorth](https://github.com/wsknorth)" Guadagno
+
+# License
+This project is licensed under the MIT License - see the [License](License) file for details
