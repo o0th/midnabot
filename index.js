@@ -12,8 +12,7 @@ bot.command('sandbox', sandbox())
 bot.command('roll', roll())
 
 bot.command('about', (ctx) => {
-  ctx.replyWithMarkdown(`*${name} v.${version}*\n${author}\n${homepage}`)
-  ctx.replyWithMarkdown(`A github star is appreciate <3`)
+  return ctx.replyWithMarkdown(`*${name} v.${version}*\n${author}\n${homepage}`)
 })
 
 bot.startPolling()
