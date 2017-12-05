@@ -1,6 +1,6 @@
 {
   "name": "midna",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "telegram bot",
   "main": "index.js",
   "scripts": {

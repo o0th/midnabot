@@ -1,7 +1,7 @@
 <img width="200px" align="center" src="./images/midna.png_large"/>
 
 # @midnabot
-[![Version](https://img.shields.io/badge/Version-0.1.1-blue.svg?style=for-the-badge)]()
+[![Version](https://img.shields.io/badge/Version-0.1.2-blue.svg?style=for-the-badge)]()
 [![Telegram](https://img.shields.io/badge/Telegram-midnabot-blue.svg?style=for-the-badge)](https://t.me/midnabot)
 
 ## Sandbox - [gf3/sandbox](https://github.com/gf3/sandbox)
