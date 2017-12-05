@@ -10,6 +10,8 @@
   <a href="https://t.me/midnadevbot"><img src="https://img.shields.io/badge/Telegram-midnadevbot-blue.svg?style=for-the-badge" alt="Telegram"></a>
 </p>
 
+<br/>
+
 ## Install
 
 Clone the repository
