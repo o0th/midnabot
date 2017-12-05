@@ -1,11 +1,14 @@
 <h1 align="center">
   <img width="200px" src="./images/midna.png_large"/>
+  <br/>midnabot
 </h1>
 
-# midna
-[![Code style](https://img.shields.io/badge/Code_style-Standard-green.svg?style=for-the-badge)]()
-[![Version](https://img.shields.io/badge/Version-0.1.2-blue.svg?style=for-the-badge)]()
-[![Telegram](https://img.shields.io/badge/Telegram-midnabot-blue.svg?style=for-the-badge)](https://t.me/midnabot)
+<p align="center">
+  <a href="https://github.com/standard/standard"><img src="https://img.shields.io/badge/Code_style-Standard-green.svg?style=for-the-badge" alt="Standard"></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-0.1.2-blue.svg?style=for-the-badge" alt="Version"></a>
+  <a href="https://t.me/midnabot"><img src="https://img.shields.io/badge/Telegram-midnabot-blue.svg?style=for-the-badge" alt="Telegram"></a>
+  <a href="https://t.me/midnadevbot"><img src="https://img.shields.io/badge/Telegram-midnadevbot-blue.svg?style=for-the-badge" alt="Telegram"></a>
+</p>
 
 ## Install
 
