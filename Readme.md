@@ -1,6 +1,6 @@
 <h1 align="center">
   <img width="200px" src="./images/midna.png_large"/>
-  <br/>midnabot
+  <br/>midna
 </h1>
 
 <p align="center">
