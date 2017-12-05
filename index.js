@@ -1,3 +1,4 @@
+require('dotenv').load()
 const Telegraf = require('telegraf')
 
 const { sandbox } = require('./lib/sandbox')

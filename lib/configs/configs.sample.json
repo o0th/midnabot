@@ -1,6 +1,11 @@
 {
   "development": {
-    "username": "your bot username",
-    "token": "your bot token"
+    "username": "your bot username for development",
+    "token": "your bot token for development"
+  },
+
+  "production": {
+    "username": "your bot username for production",
+    "token": "your bot token for production"
   }
 }

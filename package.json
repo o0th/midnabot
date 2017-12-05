@@ -4,6 +4,7 @@
   "description": "telegram bot",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "debug": "^3.1.0",
+    "dotenv": "^4.0.0",
     "eslint": "^4.12.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.8.0",
