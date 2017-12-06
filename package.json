@@ -1,11 +1,10 @@
 {
   "name": "midna",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "telegram bot",
   "main": "lib/development.js",
   "scripts": {
-    "start": "node lib/development.js",
-    "production": "node lib/production.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,8 +18,6 @@
   },
   "homepage": "https://github.com/wsknorth/midna#readme",
   "dependencies": {
-    "koa": "^2.4.1",
-    "koa-body": "^2.5.0",
     "roll": "^1.2.0",
     "sandbox": "^0.8.6",
     "telegraf": "^3.17.0"

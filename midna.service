@@ -1,11 +1,12 @@
 [Service]
-ExecStart=/usr/bin/node /var/www/midna/lib/production.js
+ExecStart=/usr/bin/node /var/www/midna/index.js
 Restart=always
 StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=midna
 User=midna
 Group=midna
+Environment=NODE_ENV=production
 
 [Install]
 WantedBy=multi-user.target
