@@ -1,5 +1,5 @@
 [Service]
-ExecStart=/usr/bin/node /var/www/midna/lib/production.js
+ExecStart=/usr/bin/node /var/www/midna/index.js
 Restart=always
 StandardOutput=syslog
 StandardError=syslog
