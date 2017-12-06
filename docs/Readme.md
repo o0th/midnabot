@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://github.com/standard/standard"><img src="https://img.shields.io/badge/Code_style-Standard-green.svg?style=for-the-badge" alt="Standard"></a>
-  <a href="#"><img src="https://img.shields.io/badge/Version-0.1.2-blue.svg?style=for-the-badge" alt="Version"></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-0.1.3-blue.svg?style=for-the-badge" alt="Version"></a>
   <a href="https://t.me/midnabot"><img src="https://img.shields.io/badge/Telegram-midnabot-blue.svg?style=for-the-badge" alt="Telegram"></a>
   <a href="https://www.gitcheese.com/donate/users/22490354/repos/113030252"><img src="https://img.shields.io/badge/Gitcheese-Donate-red.svg?style=for-the-badge" alt="Donate"></a>
 </p>
