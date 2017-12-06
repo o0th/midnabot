@@ -1,7 +1,7 @@
 require('dotenv').config()
 
-const { telegraf } = require('./telegraf')
-const { configs } = require('./configs')
+const { telegraf } = require('./lib/telegraf')
+const { configs } = require('./lib/configs')
 
 const production = () => {
   telegraf.telegram.setWebhook(configs.webhook)
