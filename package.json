@@ -19,8 +19,6 @@
   },
   "homepage": "https://github.com/wsknorth/midna#readme",
   "dependencies": {
-    "koa": "^2.4.1",
-    "koa-body": "^2.5.0",
     "roll": "^1.2.0",
     "sandbox": "^0.8.6",
     "telegraf": "^3.17.0"
