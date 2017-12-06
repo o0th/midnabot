@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img width="200px" src="images/midna.png_large"/>
+  <img width="200px" src="/docs/images/midna.png_large"/>
   <br/>midna
 </h1>
 
