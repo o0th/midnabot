@@ -13,7 +13,7 @@
 <br/>
 
 ## Midnabot
-[Midnabot](https://t.me/midnabot) is an open source telegram bot, written in [nodejs](https://nodejs.org/it/) and [telegraf](https://github.com/telegraf/telegraf). You can start using it by searching `Midnabot` on telegram or following the link on the telegram budge above. If you want to contribute or just run your own instance you can follow the [developers](/docs/Developers.md) guide.
+[Midnabot](https://t.me/midnabot) is an open source telegram bot, written in [nodejs](https://nodejs.org/it/) and [telegraf](https://github.com/telegraf/telegraf). You can start using it by searching `Midnabot` on telegram or following the link on the telegram budge above. If you want to contribute or just run your own instance you can follow the [contributing](/docs/Contributing.md) guide.
 
 ## Sandbox
 Execute JavaScript code
