@@ -6,7 +6,7 @@ StandardError=syslog
 SyslogIdentifier=midna
 User=midna
 Group=midna
-Environment=NODE_ENV=production
+EnvironmentFile=/var/www/midna/.env
 
 [Install]
 WantedBy=multi-user.target
