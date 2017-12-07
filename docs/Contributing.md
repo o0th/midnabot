@@ -3,6 +3,7 @@ This guide is for everyone who want to contribute (see [development](#developmen
 
 ## Code Style
 [![standard][standard-image]][standard-url]
+
 This repository uses [`standard`][standard-url] to maintain code style and consistency,
 and to avoid style arguments. `npm test` runs `standard` automatically, so you don't have
 to!
