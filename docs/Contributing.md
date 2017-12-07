@@ -1,4 +1,5 @@
 # Contributing
+This guide is for everyone who want to contribute (see [development](#development)) or who want to run a personal instance of Midnabot (see [production](#production)). If you need help or you want to report a bug, just open an [issue](https://github.com/wsknorth/midnabot/issues).
 
 ## Installation
 Clone the repository
