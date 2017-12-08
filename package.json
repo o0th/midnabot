@@ -1,22 +1,22 @@
 {
-  "name": "midna",
-  "version": "0.1.3",
-  "description": "telegram bot",
-  "main": "lib/development.js",
+  "name": "midnabot",
+  "version": "0.1.4",
+  "description": "midnabot for telegram",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wsknorth/midna.git"
+    "url": "git+https://github.com/wsknorth/midnabot.git"
   },
   "author": "Sabato Luca Guadagno <wsknorth@protonmail.ch>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wsknorth/midna/issues"
+    "url": "https://github.com/wsknorth/midnabot/issues"
   },
-  "homepage": "https://github.com/wsknorth/midna#readme",
+  "homepage": "https://github.com/wsknorth/midnabot#readme",
   "dependencies": {
     "roll": "^1.2.0",
     "sandbox": "^0.8.6",
