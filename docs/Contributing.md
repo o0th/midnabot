@@ -44,12 +44,12 @@ $ npm start
 Before we run the bot we need to check the `.env` file. For the `production` mode it will be
 ```
 NODE_ENV=production
-DEBUG=Midnabot:*
+DEBUG=midnabot:*
 ```
 
 Since I've an arch based server i wrote a `midnabot.service` file so we can manage the bot with `systemctl`. We just need to copy this file in `/etc/systemd/system`.
 ```bash
-$ sudo cp midna.service /etc/systemd/system/midnabot.service
+$ sudo cp midnabot.service /etc/systemd/system/midnabot.service
 ```
 
 Usually for each application I've a user and a group named as the app, you can skip this modifying `midnabot.service`
