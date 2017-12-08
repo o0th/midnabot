@@ -1,6 +1,17 @@
 # Contributing
 This guide is for everyone who want to contribute (see [development](#development)) or who want to run a personal instance of Midnabot (see [production](#production)). If you need help or you want to report a bug, just open an [issue](https://github.com/wsknorth/midnabot/issues).
 
+## Code Style
+[![standard][standard-image]][standard-url]
+
+This repository uses [`standard`][standard-url] to maintain code style and consistency,
+and to avoid style arguments. `npm test` runs `standard` automatically, so you don't have
+to!
+
+[standard-image]: https://cdn.rawgit.com/standard/standard/master/badge.svg
+[standard-url]: https://github.com/standard/standard
+
+
 ## Installation
 Clone the repository
 ```bash
