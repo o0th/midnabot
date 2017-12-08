@@ -1,12 +1,12 @@
 [Service]
-ExecStart=/usr/bin/node /var/www/midna/index.js
+ExecStart=/usr/bin/node /var/www/midnabot/index.js
 Restart=always
 StandardOutput=syslog
 StandardError=syslog
-SyslogIdentifier=midna
-User=midna
-Group=midna
-EnvironmentFile=/var/www/midna/.env
+SyslogIdentifier=midnabot
+User=midnabot
+Group=midnabot
+EnvironmentFile=/var/www/midnabot/.env
 
 [Install]
 WantedBy=multi-user.target
