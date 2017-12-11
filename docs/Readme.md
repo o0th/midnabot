@@ -15,16 +15,24 @@
 ## Midnabot
 [Midnabot](https://t.me/midnabot) is an open source telegram bot, written in [nodejs](https://nodejs.org/it/) and [telegraf](https://github.com/telegraf/telegraf). You can start using it by searching `Midnabot` on telegram or following the link on the telegram budge above. If you want to contribute or just run your own instance you can follow the [contributing](/docs/Contributing.md) guide.
 
-## Sandbox
-Execute JavaScript code
+## Commands
+
+### About
+```
+/about
+```
+Show information about midnabot
+
+### Sandbox
 ```
 /sandbox ```console.log('Hello world')```
 ```
+Execute javascript code.
 The `/sandbox` command use [gf3/sandbox](https://github.com/gf3/sandbox) to work.
 
-## Roll
-Roll dices
+### Roll
 ```
 /roll 2d10
 ```
+Roll dices.
 The `/roll` command use [troygoode/node-roll](https://github.com/troygoode/node-roll) to work.
