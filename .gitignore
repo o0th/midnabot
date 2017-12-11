@@ -1,2 +1,3 @@
 node_modules/
 lib/configs/configs.json
+database/midnabot.sqlite
