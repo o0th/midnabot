@@ -17,11 +17,17 @@
 
 ## Commands
 
-### About
+### Start
 ```
-/about
+/start
 ```
-Show information about midnabot
+Enable bot
+
+### Stop
+```
+/stop
+```
+Disable bot
 
 ### Sandbox
 ```
@@ -36,3 +42,9 @@ The `/sandbox` command use [gf3/sandbox](https://github.com/gf3/sandbox) to work
 ```
 Roll dices.
 The `/roll` command use [troygoode/node-roll](https://github.com/troygoode/node-roll) to work.
+
+### About
+```
+/about
+```
+Show information about midnabot
