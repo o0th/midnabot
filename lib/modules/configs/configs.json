@@ -1,0 +1,12 @@
+{
+  "development": {
+    "username": "midnadevbot",
+    "token": "488808043:AAEnrG_7_jtm6k2eJm_zHHhV67Yaqxflje4"
+  },
+  "production": {
+    "username": "midnabot",
+    "token": "426124500:AAHyqS64s1TEZjwMQbMFEeE7NxC8bl5CDgk",
+    "webhook": "https://wsknorth.io/midnabot",
+    "port": 4000
+  }
+}

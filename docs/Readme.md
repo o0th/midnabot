@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://github.com/standard/standard"><img src="https://img.shields.io/badge/Code_style-Standard-green.svg?style=for-the-badge" alt="Standard"></a>
-  <a href="https://github.com/wsknorth/midna/releases"><img src="https://img.shields.io/badge/Version-0.1.5-orange.svg?style=for-the-badge" alt="Version"></a>
+  <a href="https://github.com/wsknorth/midna/releases"><img src="https://img.shields.io/badge/Version-0.2.0-orange.svg?style=for-the-badge" alt="Version"></a>
   <a href="/docs/License.md"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License"></a>
   <a href="https://t.me/midnabot"><img src="https://img.shields.io/badge/Telegram-midnabot-blue.svg?style=for-the-badge" alt="Telegram"></a>
   <a href="https://www.gitcheese.com/donate/users/22490354/repos/113030252"><img src="https://img.shields.io/badge/Gitcheese-Donate-red.svg?style=for-the-badge" alt="Donate"></a>
@@ -17,11 +17,17 @@
 
 ## Commands
 
-### About
+### Start
 ```
-/about
+/start
 ```
-Show information about midnabot
+Enable bot
+
+### Stop
+```
+/stop
+```
+Disable bot
 
 ### Sandbox
 ```
@@ -36,3 +42,9 @@ The `/sandbox` command use [gf3/sandbox](https://github.com/gf3/sandbox) to work
 ```
 Roll dices.
 The `/roll` command use [troygoode/node-roll](https://github.com/troygoode/node-roll) to work.
+
+### About
+```
+/about
+```
+Show information about midnabot
