@@ -4,12 +4,13 @@ const debug = require('debug')('midnabot')
 const Telegraf = require('telegraf')
 
 const { configs, sequelize } = require('./lib/modules')
-const { request, response, after } = require('./lib/middlewares')
+const { starts, request, response, after } = require('./lib/middlewares')
 const { start, sandbox, roll, about, stop } = require('./lib/commands')
 
 const bot = new Telegraf(configs.token, { username: configs.username })
 sequelize.sync().then(() => debug(`Database connected`))
 
+bot.use(starts())
 bot.use(request())
 bot.use(response())
 bot.command('start', start())
