@@ -3,15 +3,15 @@ const debug = require('debug')('midnabot')
 
 const Telegraf = require('telegraf')
 
-const { engine } = require('./lib/engine')
+const { core } = require('./lib/core')
 const { configs, sequelize } = require('./lib/modules')
 const { sandbox, roll, about } = require('./lib/commands')
 
 const bot = new Telegraf(configs.token, { username: configs.username })
-sequelize.sync().then(() => debug(`Database connected`))
+sequelize.sync({ force: true }).then(() => debug(`Database connected`))
 
 bot
-  .use(engine())
+  .use(core())
   .command('sandbox', sandbox())
   .command('roll', roll())
   .command('about', about())
