@@ -1,4 +1,9 @@
 # Contributing
+[![bitHound Overall Score](https://www.bithound.io/github/wsknorth/midnabot/badges/score.svg)](https://www.bithound.io/github/wsknorth/midnabot)
+[![bitHound Dependencies](https://www.bithound.io/github/wsknorth/midnabot/badges/dependencies.svg)](https://www.bithound.io/github/wsknorth/midnabot/master/dependencies/npm)
+[![bitHound Dev Dependencies](https://www.bithound.io/github/wsknorth/midnabot/badges/devDependencies.svg)](https://www.bithound.io/github/wsknorth/midnabot/master/dependencies/npm)
+[![bitHound Code](https://www.bithound.io/github/wsknorth/midnabot/badges/code.svg)](https://www.bithound.io/github/wsknorth/midnabot)
+
 This guide is for everyone who want to contribute (see [development](#development)) or who want to run a personal instance of Midnabot (see [production](#production)). If you need help or you want to report a bug, just open an [issue](https://github.com/wsknorth/midnabot/issues).
 
 ## Code Style
