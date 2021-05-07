@@ -28,7 +28,9 @@
   },
   "dependencies": {
     "dotenv": "^9.0.0",
-    "koa": "^2.13.1",
     "telegraf": "^4.3.0"
+  },
+  "engines": {
+    "node": ">= 16.0.0"
   }
 }
