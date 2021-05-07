@@ -1,0 +1,17 @@
+image: docker:19.03.13
+
+.version: &version
+  - export version=$(awk -F\" '/"version":/ {print $4}' package.json)
+
+build:
+  stage: build
+  services:
+    - docker:19.03.13-dind
+  variables:
+    DOCKER_DRIVER: overlay
+  before_script:
+    - echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin registry.digitalocean.com
+  script:
+    - *version
+    - docker build -t midnabot:$version .
+    - docker push registry.digitalocean.com/midnabot/midnabot:$version

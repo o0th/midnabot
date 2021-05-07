@@ -1,0 +1,5 @@
+node_modules
+*.tfvars
+.terraform
+.env
+init.sh
