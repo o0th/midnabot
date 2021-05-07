@@ -1,20 +1,22 @@
 require('dotenv').config()
 const { Telegraf } = require('telegraf')
 
-const bot = new Telegraf(process.env.TELEGRAM, { telegram: { webhookReply: true } })
+const bot = new Telegraf(process.env.TELEGRAM)
 
 bot.start((ctx) => ctx.reply('Welcome'))
 
 /** Start bot in development mode (polling) */
 const development = () => {
+  process.stdout.write('Bot starting in development mode...\n')
   bot.telegram.deleteWebhook()
   bot.startPolling()
 }
 
 /** Start bot in production mode (webhook) */
 const production = () => {
-  process.stdout.write(`Production on ${process.env.PUBLIC_URL} ${process.env.PORT}\n`)
-  process.stdout.write(`${JSON.stringify(process.env, null, 2)}\n`)
+  process.stdout.write('Bot starting in production mode...\n')
+  process.stdout.write(`Webhook: ${process.env.PUBLIC_URL}\n`)
+  process.stdout.write(`Port: ${process.env.PORT}\n`)
   bot.telegram.setWebhook(process.env.PUBLIC_URL)
   bot.startWebhook('/', null, process.env.PORT)
 }
