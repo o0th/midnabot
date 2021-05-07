@@ -14,6 +14,7 @@ const development = () => {
 /** Start bot in production mode (webhook) */
 const production = () => {
   process.stdout.write(`Production on ${process.env.PUBLIC_URL} ${process.env.PORT}\n`)
+  process.stdout.write(`Some testing: ${process.env.midnabot.PUBLIC_URL}`)
   bot.telegram.setWebhook(process.env.PUBLIC_URL)
   bot.startWebhook('/', null, process.env.PORT)
 }
