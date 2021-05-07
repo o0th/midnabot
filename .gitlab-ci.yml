@@ -15,3 +15,7 @@ build:
     - *version
     - docker build -t midnabot:$version .
     - docker push registry.digitalocean.com/midnabot/midnabot:$version
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_COMMIT_BRANCH == "master"'
+
