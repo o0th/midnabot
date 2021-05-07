@@ -17,8 +17,12 @@ const production = () => {
   process.stdout.write('Bot starting in production mode...\n')
   process.stdout.write(`Webhook: ${process.env.PUBLIC_URL}\n`)
   process.stdout.write(`Port: ${process.env.PORT}\n`)
-  bot.telegram.setWebhook(process.env.PUBLIC_URL)
-  bot.startWebhook('/', null, process.env.PORT)
+  bot.launch({
+    webhook: {
+      domain: process.env.PUBLIC_URL,
+      port: process.env.PORT
+    }
+  })
 }
 
 process.env.NODE_ENV === 'production'
