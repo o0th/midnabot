@@ -1,28 +1,17 @@
 import dotenv from 'dotenv'
-import axios from 'axios'
 
 import { Telegraf } from 'telegraf'
 import { crypto } from './modules/crypto/index.mjs'
 
+import config from './package.json'
+
 dotenv.config()
-const pairs = await crypto.pairs()
 
 const bot = new Telegraf(process.env.TELEGRAM)
 
-bot.start((ctx) => ctx.reply('Welcome'))
-bot.command('crypto', async (ctx) => {
-  /** Assets pairs: https://api.kraken.com/0/public/AssetPairs */
-  const message = ctx.message.text
-  const pair = message.match(/\/crypto ([A-Za-z]+)/)[1].toUpperCase()
-	if (pairs.includes(pair)) {
-    const response = await axios.get(`https://api.kraken.com/0/public/Ticker?pair=${pair}`)
-    const price = response.data.result[pair].a[0]
-    const open = response.data.result[pair].o
-    const perc = (price - open) / open * 100
-    ctx.reply(`${pair}: ${price} (${(perc >= 0 ? '+' : '')}${perc.toFixed(2)}%)`)
-  } else {
-    ctx.reply('Pair not found')
-  }
+bot.command('crypto', crypto)
+bot.command('about', async (ctx) => {
+  ctx.replyWithMarkdown(`*Midnabot* v${config.version}\n${config.homepage}`)
 })
 
 /** Start bot in development mode (polling) */
