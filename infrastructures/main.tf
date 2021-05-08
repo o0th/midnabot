@@ -12,25 +12,25 @@ resource "digitalocean_app" "midnabot" {
 
       env {
         key   = "NODE_ENV"
-        scope = "RUN_AND_BUILD_TIME"
+        scope = "RUN_TIME"
         value = "production"
       }
 
       env {
         key   = "PORT"
-        scope = "RUN_AND_BUILD_TIME"
+        scope = "RUN_TIME"
         value = "$${midnabot.PRIVATE_PORT}"
       }
 
       env {
         key   = "PUBLIC_URL"
-        scope = "RUN_AND_BUILD_TIME"
+        scope = "RUN_TIME"
         value = "$${midnabot.PUBLIC_URL}"
       }
 
       env {
         key   = "TELEGRAM"
-        scope = "RUN_AND_BUILD_TIME"
+        scope = "RUN_TIME"
         value = var.telegram_token
         type  = "SECRET"
       }
@@ -51,3 +51,4 @@ resource "digitalocean_app" "midnabot" {
     }
   }
 }
+
