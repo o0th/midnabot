@@ -6,6 +6,10 @@ insert_final_newline = true
 indent_style = space
 indent_size = 2
 
+[*.mjs]
+indent_style = space
+indent_size = 2
+
 [*.json]
 indent_style = space
 indent_size = 2
