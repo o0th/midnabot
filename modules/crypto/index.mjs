@@ -14,22 +14,35 @@ const shortcuts = {
   ETH: 'XETHZUSD',
 
   DOGE: 'XDGUSD',
+  XDG: 'XDGUSD',
 
   RIPPLE: 'XXRPZUSD',
   XRP: 'XXRPZUSD',
 
   FLOW: 'FLOWUSD',
 
-  ADA: 'ADAUSD',
   CARDANO: 'ADAUSD',
+  ADA: 'ADAUSD',
 
-  XLM: 'XXLMZUSD',
-  STELLAR: 'XXLMZUSD'
+  STELLAR: 'XXLMZUSD',
+  XLM: 'XXLMZUSD'
 }
 
 export const crypto = async (ctx) => {
   const message = ctx.message.text
-  const argument = message.match(/\/crypto ([A-Za-z]+)/)[1].toUpperCase()
+  const argument = message.match(/\/crypto ([A-Za-z]+)/)?.[1].toUpperCase()
+
+  if (!argument) {
+    const cryptos = Object.keys(shortcuts)
+    const message = `Example:\n` +
+      `/crypto bitcoin\n\n` +
+      `Cryptocurrencies available:\n` +
+      `${cryptos.join(', ')}\n\n` +
+      `Or any pair from:\n` +
+      `https://api.kraken.com/0/public/AssetPairs`
+
+    return ctx.reply(message)
+  }
 
   const pair = (Object.keys(shortcuts).includes(argument))
     ? shortcuts[argument]

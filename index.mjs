@@ -1,18 +1,15 @@
 import dotenv from 'dotenv'
 
 import { Telegraf } from 'telegraf'
+import { about } from './modules/about/index.mjs'
 import { crypto } from './modules/crypto/index.mjs'
-
-import config from './package.json'
 
 dotenv.config()
 
 const bot = new Telegraf(process.env.TELEGRAM)
 
+bot.command('about', about)
 bot.command('crypto', crypto)
-bot.command('about', async (ctx) => {
-  ctx.replyWithMarkdown(`*Midnabot* v${config.version}\n${config.homepage}`)
-})
 
 /** Start bot in development mode (polling) */
 const development = () => {
