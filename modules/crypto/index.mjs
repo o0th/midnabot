@@ -55,7 +55,7 @@ export const crypto = async (ctx) => {
     const decimals = Number(pairs[pair].pair_decimals)
     const open = Number(response.data.result[pair].o)
     const perc = (price - open) / open * 100
-    const sign = perc >= 0 ? '+' : ''
+    const sign = perc > 0 ? '+' : ''
     ctx.reply(`${wsname}: ${price.toFixed(decimals)} (${sign}${perc.toFixed(2)}% 24h)`)
   } else {
     ctx.reply('Pair not found')
