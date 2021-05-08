@@ -1,6 +1,7 @@
 import dotenv from 'dotenv'
 
 import { Telegraf } from 'telegraf'
+import { requests } from './modules/requests/index.mjs'
 import { about } from './modules/about/index.mjs'
 import { crypto } from './modules/crypto/index.mjs'
 
@@ -8,6 +9,7 @@ dotenv.config()
 
 const bot = new Telegraf(process.env.TELEGRAM)
 
+bot.use(requests)
 bot.command('about', about)
 bot.command('crypto', crypto)
 
