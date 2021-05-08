@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const pairs = await (async () => {
   const response = await axios.get('https://api.kraken.com/0/public/AssetPairs')
-  return Object.keys(response.data.result)
+  return response.data.result
 })();
 
 const shortcuts = {
@@ -10,8 +10,8 @@ const shortcuts = {
   XBT: 'XBTUSDT',
   BTC: 'XBTUSDT',
 
-  ETHERIUM: 'XETHUSD',
-  ETH: 'XETHUSD',
+  ETHERIUM: 'XETHZUSD',
+  ETH: 'XETHZUSD',
 
   DOGE: 'XDGUSD',
 
@@ -35,13 +35,15 @@ export const crypto = async (ctx) => {
     ? shortcuts[argument]
     : argument
 
-	if (pairs.includes(pair)) {
+	if (Object.keys(pairs).includes(pair)) {
     const response = await axios.get(`https://api.kraken.com/0/public/Ticker?pair=${pair}`)
-    const price = response.data.result[pair].a[0]
-    const open = response.data.result[pair].o
+    const wsname = pairs[pair].wsname
+    const price = Number(response.data.result[pair].a[0])
+    const decimals = Number(pairs[pair].pair_decimals)
+    const open = Number(response.data.result[pair].o)
     const perc = (price - open) / open * 100
     const sign = perc >= 0 ? '+' : ''
-    ctx.reply(`${pair}: ${price} (${sign}${perc.toFixed(2)}% 24h)`)
+    ctx.reply(`${wsname}: ${price.toFixed(decimals)} (${sign}${perc.toFixed(2)}% 24h)`)
   } else {
     ctx.reply('Pair not found')
   }
