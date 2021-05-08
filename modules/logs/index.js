@@ -1,4 +1,4 @@
-const requests = (ctx, next) => {
+const logs = (ctx, next) => {
   const user = ctx.update.message.from.username
   const text = ctx.update.message.text
   const type = ctx.update.message.chat.type
@@ -10,4 +10,4 @@ const requests = (ctx, next) => {
   next()
 }
 
-module.exports = { requests }
+module.exports = { logs }

@@ -1,13 +1,14 @@
 require('dotenv').config()
 
 const { Telegraf } = require('telegraf')
-const { requests } = require('./modules/requests')
+
+const { logs } = require('./modules/logs')
 const { about } = require('./modules/about')
 const { crypto } = require('./modules/crypto')
 
 const bot = new Telegraf(process.env.TELEGRAM)
 
-bot.use(requests)
+bot.use(logs)
 bot.command('about', about)
 bot.command('crypto', crypto)
 
