@@ -1,11 +1,11 @@
 {
   "name": "midnabot",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "midnabot for telegram",
   "main": "index.js",
   "scripts": {
-    "start": "node --experimental-json-modules index.mjs",
-    "dev": "nodemon --experimental-json-modules index.mjs",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

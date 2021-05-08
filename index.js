@@ -1,11 +1,9 @@
-import dotenv from 'dotenv'
+require('dotenv').config()
 
-import { Telegraf } from 'telegraf'
-import { requests } from './modules/requests/index.mjs'
-import { about } from './modules/about/index.mjs'
-import { crypto } from './modules/crypto/index.mjs'
-
-dotenv.config()
+const { Telegraf } = require('telegraf')
+const { requests } = require('./modules/requests')
+const { about } = require('./modules/about')
+const { crypto } = require('./modules/crypto')
 
 const bot = new Telegraf(process.env.TELEGRAM)
 

@@ -1,9 +1,6 @@
-import axios from 'axios'
+const axios = require('axios')
 
-const pairs = await (async () => {
-  const response = await axios.get('https://api.kraken.com/0/public/AssetPairs')
-  return response.data.result
-})();
+const pairs = require('./pairs.json')
 
 const shortcuts = {
   BITCOIN: 'XBTUSDT',
@@ -28,18 +25,18 @@ const shortcuts = {
   XLM: 'XXLMZUSD'
 }
 
-export const crypto = async (ctx) => {
+const crypto = async (ctx) => {
   const message = ctx.message.text
   const argument = message.match(/\/crypto ([A-Za-z]+)/)?.[1].toUpperCase()
 
   if (!argument) {
     const cryptos = Object.keys(shortcuts)
-    const message = `Example:\n` +
-      `/crypto bitcoin\n\n` +
-      `Cryptocurrencies available:\n` +
+    const message = 'Example:\n' +
+      '/crypto bitcoin\n\n' +
+      'Cryptocurrencies available:\n' +
       `${cryptos.join(', ')}\n\n` +
-      `Or any pair from:\n` +
-      `https://api.kraken.com/0/public/AssetPairs`
+      'Or any pair from:\n' +
+      'https://api.kraken.com/0/public/AssetPairs'
 
     return ctx.reply(message)
   }
@@ -48,7 +45,7 @@ export const crypto = async (ctx) => {
     ? shortcuts[argument]
     : argument
 
-	if (Object.keys(pairs).includes(pair)) {
+  if (Object.keys(pairs).includes(pair)) {
     const response = await axios.get(`https://api.kraken.com/0/public/Ticker?pair=${pair}`)
     const wsname = pairs[pair].wsname
     const price = Number(response.data.result[pair].a[0])
@@ -61,3 +58,5 @@ export const crypto = async (ctx) => {
     ctx.reply('Pair not found')
   }
 }
+
+module.exports = { crypto }
