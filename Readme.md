@@ -10,3 +10,15 @@
 
 ### midnabot
 
+For local development create a `.env` file with the following informations
+
+```bash
+PORT=<local port for the service>
+TELEGRAM=<your telegram bot token>
+```
+
+Start polling
+
+```bash
+npm run dev
+```
