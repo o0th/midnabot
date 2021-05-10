@@ -1,6 +1,6 @@
 ## midnabot
 
-<p align="center">
+<p>
   <a href="https://t.me/midnabot">
     <img src="https://img.shields.io/badge/Version-0.2.1-green.svg?style=for-the-badge" alt="Version">
   </a>
