@@ -2,7 +2,7 @@
 
 <p>
   <a href="https://t.me/midnabot">
-    <img src="https://img.shields.io/badge/Version-0.2.1-green.svg?style=for-the-badge" alt="Version">
+    <img src="https://img.shields.io/badge/Version-0.2.2-green.svg?style=for-the-badge" alt="Version">
   </a>
   <a href="https://github.com/standard/standard">
     <img src="https://img.shields.io/badge/Code_style-Standard-green.svg?style=for-the-badge" alt="Standard">
