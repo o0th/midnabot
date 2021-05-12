@@ -6,6 +6,7 @@ const { logs } = require('./modules/logs')
 const { spam } = require('./modules/spam')
 const { about } = require('./modules/about')
 const { crypto } = require('./modules/crypto')
+const { midnacoin } = require('./modules/midnacoin')
 
 const bot = new Telegraf(process.env.TELEGRAM)
 
@@ -13,6 +14,7 @@ bot.use(logs)
 bot.use(spam)
 bot.command('about', about)
 bot.command('crypto', crypto)
+bot.command('midnacoin', midnacoin)
 
 /** Start bot in development mode (polling) */
 const development = () => {
