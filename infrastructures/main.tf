@@ -1,53 +1,115 @@
-resource "digitalocean_app" "midnabot" {
+terraform {
+  backend "remote" {
+    organization = "o0th"
+
+    workspaces {
+      name = "midnabot"
+    }
+  }
+}
+
+provider "kubernetes" {
+  config_path = "~/.kube/config"
+}
+
+resource "kubernetes_namespace" "this" {
+  metadata {
+    name = "midnabot"
+  }
+}
+
+resource "kubernetes_secret" "this" {
+  metadata {
+    name      = "midnabot"
+    namespace = kubernetes_namespace.this.metadata[0].name
+  }
+
+  type = "kubernetes.io/dockerconfigjson"
+
+  data = {
+    ".dockerconfigjson" = file("${path.module}/auth.json")
+  }
+}
+
+resource "kubernetes_deployment" "this" {
+  metadata {
+    name      = "midnabot"
+    namespace = kubernetes_namespace.this.metadata[0].name
+  }
+
   spec {
-    name   = "midnabot"
-    region = "fra"
+    replicas = 1
 
-    service {
-      name               = "midnabot"
-      environment_slug   = "node-js"
-      instance_size_slug = "basic-xxs"
-      run_command        = "npm start"
-      http_port          = 8080
+    selector {
+      match_labels = {
+        "app" = "midnabot"
+      }
+    }
 
-      env {
-        key   = "NODE_ENV"
-        scope = "RUN_TIME"
-        value = "production"
+    template {
+      metadata {
+        labels = {
+          "app" = "midnabot"
+        }
       }
 
-      env {
-        key   = "PORT"
-        scope = "RUN_TIME"
-        value = "$${midnabot.PRIVATE_PORT}"
-      }
+      spec {
+        container {
+          name  = "midnabot"
+          image = var.image
 
-      env {
-        key   = "PUBLIC_URL"
-        scope = "RUN_TIME"
-        value = "$${midnabot.PUBLIC_URL}"
-      }
+          env {
+            name  = "NODE_ENV"
+            value = var.node_env
+          }
 
-      env {
-        key   = "TELEGRAM"
-        scope = "RUN_TIME"
-        value = var.telegram_token
-        type  = "SECRET"
-      }
+          env {
+            name  = "SERVICE_PORT"
+            value = var.service_port
+          }
 
-      gitlab {
-        repo           = "o0th/midnabot"
-        branch         = "master"
-        deploy_on_push = true
-      }
+          env {
+            name  = "SERVICE_URL"
+            value = var.service_url
+          }
 
-      health_check {
-        failure_threshold     = 0
-        initial_delay_seconds = 0
-        period_seconds        = 0
-        success_threshold     = 0
-        timeout_seconds       = 0
+          env {
+            name  = "TELEGRAM_TOKEN"
+            value = var.telegram_token
+          }
+
+          port {
+            name           = "https"
+            container_port = var.service_port
+          }
+        }
+
+        image_pull_secrets {
+          name = kubernetes_secret.this.metadata[0].name
+        }
       }
+    }
+  }
+}
+
+resource "kubernetes_service" "this" {
+  metadata {
+    name      = "midnabot"
+    namespace = kubernetes_namespace.this.metadata[0].name
+
+    labels = {
+      "app" = "midnabot"
+    }
+  }
+
+  spec {
+    selector = {
+      "app" = "midnabot"
+    }
+
+    port {
+      name = "https"
+      port = var.service_port
     }
   }
 }
