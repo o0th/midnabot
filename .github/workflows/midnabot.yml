@@ -3,7 +3,7 @@ name: midnabot
 on:
   push:
     branches:
-      - midnacoin
+      - master
 
 jobs:
   docker:
