@@ -1,9 +1,9 @@
 name: midnabot
 
 on:
-  push:
-    branches:
-      - master
+  release:
+    types:
+      - created
 
 jobs:
   docker:
