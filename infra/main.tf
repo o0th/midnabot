@@ -1,13 +1,3 @@
-terraform {
-  backend "remote" {
-    organization = "o0th"
-
-    workspaces {
-      name = "midnabot"
-    }
-  }
-}
-
 provider "kubernetes" {
   config_path = "~/.kube/config"
 }
@@ -27,7 +17,7 @@ resource "kubernetes_secret" "this" {
   type = "kubernetes.io/dockerconfigjson"
 
   data = {
-    ".dockerconfigjson" = file("${path.module}/auth.json")
+    ".dockerconfigjson" = file("${path.module}/secrets/docker-registry.json")
   }
 }
 
@@ -57,6 +47,8 @@ resource "kubernetes_deployment" "this" {
         container {
           name  = "midnabot"
           image = var.image
+
+          image_pull_policy = "Always"
 
           env {
             name  = "NODE_ENV"
@@ -110,6 +102,53 @@ resource "kubernetes_service" "this" {
     port {
       name = "https"
       port = var.service_port
+    }
+  }
+}
+
+resource "kubernetes_secret" "cert" {
+  metadata {
+    name      = "cert"
+    namespace = kubernetes_namespace.this.metadata[0].name
+  }
+
+  type = "kubernetes.io/tls"
+
+  data = {
+    "tls.crt" = file("${path.module}/secrets/tls.crt")
+    "tls.key" = file("${path.module}/secrets/tls.key")
+  }
+}
+
+resource "kubernetes_ingress" "this" {
+  wait_for_load_balancer = true
+
+  metadata {
+    name      = "midnabot"
+    namespace = kubernetes_namespace.this.metadata[0].name
+    annotations = {
+      "kubernetes.io/ingress.class"                 = "public"
+      "nginx.ingress.kubernetes.io/proxy-body-size" = "1024m"
+    }
+  }
+
+  spec {
+    tls {
+      hosts       = ["midnabot.o0th.io"]
+      secret_name = kubernetes_secret.cert.metadata[0].name
+    }
+
+    rule {
+      host = "midnabot.o0th.io"
+      http {
+        path {
+          path = "/"
+          backend {
+            service_name = "midnabot"
+            service_port = var.service_port
+          }
+        }
+      }
     }
   }
 }

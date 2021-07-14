@@ -4,4 +4,6 @@ node_modules
 *.tfvars
 
 .env
-init.sh
+
+infra/secrets/*
+!infra/secrets/*.age
