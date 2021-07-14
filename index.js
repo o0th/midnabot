@@ -7,7 +7,7 @@ const { spam } = require('./modules/spam')
 const { about } = require('./modules/about')
 const { crypto } = require('./modules/crypto')
 
-const bot = new Telegraf(process.env.TELEGRAM)
+const bot = new Telegraf(process.env.TELEGRAM_TOKEN)
 
 bot.use(logs)
 bot.use(spam)
@@ -23,8 +23,8 @@ const development = () => {
 /** Start bot in production mode (webhook) */
 const production = () => {
   process.stdout.write('Bot starting in production mode...\n')
-  const domain = process.env.PUBLIC_URL
-  const port = process.env.PORT
+  const domain = process.env.SERVICE_URL
+  const port = Number(process.env.SERVICE_PORT)
   bot.launch({ webhook: { domain, port } })
 }
 

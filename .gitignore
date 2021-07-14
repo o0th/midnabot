@@ -1,5 +1,9 @@
 node_modules
+
+*terraform*
 *.tfvars
-.terraform
+
 .env
-init.sh
+
+infra/secrets/*
+!infra/secrets/*.age
