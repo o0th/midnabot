@@ -24,6 +24,7 @@ const production = () => {
   process.stdout.write('Bot starting in production mode...\n')
   const domain = process.env.SERVICE_URL
   const port = Number(process.env.SERVICE_PORT)
+  process.stdout.write(`${domain}, ${port}\n`)
   bot.launch({ webhook: { domain, port } })
 }
 
