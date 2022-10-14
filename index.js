@@ -1,8 +1,6 @@
 require('dotenv').config()
 
-const Koa = require('koa')
-const Router = require('@koa/router')
-const koaBody = require('koa-body')
+const express = require('express')
 
 const { Telegraf } = require('telegraf')
 
@@ -25,20 +23,14 @@ const development = () => {
 
 /** Start bot in production mode (webhook) */
 const production = async () => {
-  const app = new Koa()
-  const router = new Router()
+  const app = express()
 
   const domain = process.env.SERVICE_URL
   const port = Number(process.env.SERVICE_PORT)
 
-  const webhook = await bot.createWebhook({ domain })
+  app.use(await bot.createWebhook({ domain }))
+  app.get('/', (req, res) => res.send('OK'))
 
-  router.get('/', (ctx, next) => (ctx.status = 200))
-  router.post(bot.secretPathComponent(), (ctx, next) => webhook(ctx.req, ctx.res, next))
-
-  app.use(koaBody())
-  app.use(router.routes())
-  app.use(router.allowedMethods())
   app.listen(port, () => {
     process.stdout.write(`Listening on ${domain}...\n`)
   })
