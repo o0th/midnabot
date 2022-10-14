@@ -2,6 +2,7 @@ require('dotenv').config()
 
 const Koa = require('koa')
 const Router = require('@koa/router')
+const koaBody = require('koa-body')
 
 const { Telegraf } = require('telegraf')
 
@@ -32,6 +33,7 @@ const production = () => {
 
   router.get('/', (ctx, next) => (ctx.status = 200))
 
+  app.use(koaBody())
   app.use(router.routes())
   app.use(router.allowedMethods())
   app.use(async (ctx, next) => (await bot.createWebhook({ domain }))(ctx.req, ctx.res, next))
