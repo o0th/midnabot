@@ -32,7 +32,7 @@ const production = async () => {
   app.get('/', (req, res) => res.send('OK'))
 
   app.listen(port, () => {
-    process.stdout.write(`Listening on ${domain}...\n`)
+    process.stdout.write('Bot starting in production mode...\n')
   })
 }
 
