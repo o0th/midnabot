@@ -1,7 +1,6 @@
 require('dotenv').config()
 
 const { Telegraf } = require('telegraf')
-const Koa = require('koa')
 
 const { logs } = require('./modules/logs')
 const { spam } = require('./modules/spam')
@@ -22,12 +21,10 @@ const development = () => {
 
 /** Start bot in production mode (webhook) */
 const production = () => {
+  process.stdout.write('Bot starting in production mode...\n')
   const domain = process.env.SERVICE_URL
   const port = Number(process.env.SERVICE_PORT)
-  const app = new Koa()
-  app.use(async (ctx, next) => (await bot.createWebhook({ domain }))(ctx.req, ctx.res, next))
-  app.use(ctx => { ctx.body = 'Hello' })
-  app.listen(port, () => process.stdout.write('Bot starting in production mode...\n'))
+  bot.launch({ webhook: { domain, port } })
 }
 
 process.env.NODE_ENV === 'production'
