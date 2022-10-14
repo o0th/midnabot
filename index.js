@@ -31,10 +31,10 @@ const production = () => {
   const port = Number(process.env.SERVICE_PORT)
 
   router.get('/', (ctx, next) => (ctx.status = 200))
-  router.use(async (ctx, next) => (await bot.createWebhook({ domain }))(ctx.req, ctx.res, next))
 
   app.use(router.routes())
   app.use(router.allowedMethods())
+  app.use(async (ctx, next) => (await bot.createWebhook({ domain }))(ctx.req, ctx.res, next))
   app.listen(port)
 }
 
