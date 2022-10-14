@@ -34,7 +34,7 @@ const production = async () => {
   const webhook = await bot.createWebhook({ domain })
 
   router.get('/', (ctx, next) => (ctx.status = 200))
-  router.post(bot.secretPathComponent(), (ctx, next) => webhook(ctx.request, ctx.response, next))
+  router.post(bot.secretPathComponent(), (ctx, next) => webhook(ctx.req, ctx.res, next))
 
   app.use(koaBody())
   app.use(router.routes())
