@@ -27,7 +27,7 @@ resource "digitalocean_app" "midnabot" {
 
       env {
         key   = "SERVICE_URL"
-        value = "$${APP_DOMAIN}"
+        value = "$${_self.PUBLIC_URL}"
         scope = "RUN_TIME"
       }
 
