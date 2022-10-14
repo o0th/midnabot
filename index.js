@@ -24,14 +24,14 @@ const development = () => {
 }
 
 /** Start bot in production mode (webhook) */
-const production = () => {
+const production = async () => {
   const app = new Koa()
   const router = new Router()
 
   const domain = process.env.SERVICE_URL
   const port = Number(process.env.SERVICE_PORT)
 
-  const webhook = bot.createWebhook({ domain })
+  const webhook = await bot.createWebhook({ domain })
 
   router.get('/', (ctx, next) => (ctx.status = 200))
   router.post(bot.secretPathComponent(), (ctx, next) => webhook(ctx.request, ctx.response))
@@ -45,7 +45,7 @@ const production = () => {
 }
 
 process.env.NODE_ENV === 'production'
-  ? production()
+  ? (async () => await production())()
   : development()
 
 /** Graceful stop */
