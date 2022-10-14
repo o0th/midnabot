@@ -1,9 +1,6 @@
 node_modules
 
-*terraform*
+.terraform*
 *.tfvars
 
 .env
-
-infra/secrets/*
-!infra/secrets/*.age
