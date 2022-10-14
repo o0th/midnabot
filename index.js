@@ -40,7 +40,7 @@ const production = () => {
   app.use(router.routes())
   app.use(router.allowedMethods())
   app.listen(port, () => {
-    process.stdout.write()
+    process.stdout.write(`Listening on ${domain}...\n`)
   })
 }
 
