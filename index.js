@@ -31,13 +31,17 @@ const production = () => {
   const domain = process.env.SERVICE_URL
   const port = Number(process.env.SERVICE_PORT)
 
+  const webhook = bot.createWebhook({ domain })
+
   router.get('/', (ctx, next) => (ctx.status = 200))
+  router.post(bot.secretPathComponent(), (ctx, next) => webhook(ctx.request, ctx.response))
 
   app.use(koaBody())
   app.use(router.routes())
   app.use(router.allowedMethods())
-  app.use(async (ctx, next) => (await bot.createWebhook({ domain }))(ctx.req, ctx.res, next))
-  app.listen(port)
+  app.listen(port, () => {
+    process.stdout.write()
+  })
 }
 
 process.env.NODE_ENV === 'production'
