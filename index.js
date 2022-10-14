@@ -1,5 +1,6 @@
 require('dotenv').config()
 
+const { createServer } = require('http')
 const { Telegraf } = require('telegraf')
 
 const { logs } = require('./modules/logs')
@@ -20,12 +21,12 @@ const development = () => {
 }
 
 /** Start bot in production mode (webhook) */
-const production = () => {
+const production = async () => {
   process.stdout.write('Bot starting in production mode...\n')
   const domain = process.env.SERVICE_URL
   const port = Number(process.env.SERVICE_PORT)
   process.stdout.write(`${domain}, ${port}\n`)
-  bot.launch({ webhook: { domain, port } })
+  createServer(await bot.createWebhook({ domain })).listen(port)
 }
 
 process.env.NODE_ENV === 'production'
