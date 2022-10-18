@@ -1,7 +1,5 @@
 require('dotenv').config()
 
-const express = require('express')
-
 const { Telegraf } = require('telegraf')
 
 const { logs } = require('./modules/logs')
@@ -23,7 +21,7 @@ const development = () => {
 
 /** Start bot in production mode (webhook) */
 const production = async () => {
-  const app = express()
+  const app = require('express')()
 
   const domain = process.env.SERVICE_URL
   const port = Number(process.env.SERVICE_PORT)
